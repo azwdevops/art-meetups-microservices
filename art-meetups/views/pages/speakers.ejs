@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-8">
       <article class="speakerslist maincontent">
-        <% speakers.forEach((speaker) => { %>
+        <% if (Array.isArray(speakers) && speakers.length > 0) { %> <% speakers.forEach((speaker) => { %>
         <div class="mb-4">
           <h4 class="speakerslist-title"><%= speaker.title %></h4>
           <div class="speakerslist-name">
@@ -22,7 +22,7 @@
             <div class="col-sm-9"><%= speaker.summary %></div>
           </div>
         </div>
-        <%}) %>
+        <%}) %> <% } %>
       </article>
     </div>
     <aside class="col-md-4"><%- include('./partials/artworks') %></aside>
